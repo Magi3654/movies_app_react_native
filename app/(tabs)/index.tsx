@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar";
 import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchPopularMovies } from "@/services/api";
-import MovieCard from "../components/MovieCard"; // Ensure you import the MovieCard component
+import MovieCard from "../components/MovieCard"; 
 
 const headerImage = require("@/assets/images/encabezado.jpg");
 const logo = require("@/assets/images/logo.png");
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   columnWrapper: {
-    justifyContent: 'space-between', // Adjusted for better spacing
+    justifyContent: 'space-between', 
   },
   flatList: {
     marginTop: 8,

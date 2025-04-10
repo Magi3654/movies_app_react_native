@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { Result } from '../interfaces/tmbdMovie'; // Adjust the import path as necessary
+import { Result } from '../interfaces/tmbdMovie'; 
 
 const MovieCard: React.FC<Result> = ({id, poster_path, title, vote_average, release_date }) => {
   const imagePath = `https://image.tmdb.org/t/p/w500${poster_path}`;
@@ -18,8 +18,8 @@ const MovieCard: React.FC<Result> = ({id, poster_path, title, vote_average, rele
 
 const styles = StyleSheet.create({
     card: {
-      width: '30%', // Adjusted width for better fit in a 3-column layout
-      height: 350, // Increased height for more content space
+      width: '30%', 
+      height: 350, 
       margin: 10, // Space between cards
       backgroundColor: '#fff', // White background for contrast
       borderRadius: 12, // Rounded corners

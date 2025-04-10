@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1E1E2F', // Replace with your desired dark color
-    borderRadius: 25, // Adjust for rounded corners
+    backgroundColor: '#1E1E2F', 
+    borderRadius: 25, 
     paddingHorizontal: 15, // Horizontal padding
     paddingVertical: 10,
     marginTop:200 // Vertical padding
