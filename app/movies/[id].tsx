@@ -2,12 +2,16 @@ import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import React from 'react';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { Result } from '../interfaces/tmbdMovie'; 
+import StarRating from '../components/StarsRate'; // Ensure the import path is correct
 
 const MovieDetails: React.FC<Result> = () => {
-    const { title, overview, release_date, poster_path } = useLocalSearchParams();
-    console.log({ title, overview, release_date, poster_path });
+    const { title, overview, poster_path, vote_average } = useLocalSearchParams(); // Ensure you are using the correct parameter name
+    console.log({ title, overview, poster_path });
 
     const imagePath = poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : 'https://via.placeholder.com/500x300';
+
+    // Convert vote_average to a number, ensuring it's valid
+    const rating = typeof vote_average === 'string' ? parseFloat(vote_average) : vote_average;
 
     return (
         <ScrollView style={styles.container}>
@@ -15,8 +19,8 @@ const MovieDetails: React.FC<Result> = () => {
             <View style={styles.content}>
                 <Text style={styles.title} numberOfLines={1}>{title || 'Unknown Title'}</Text>
                 <Image source={{ uri: imagePath }} style={styles.image} />
-                <Text style={styles.releaseDate}>Release Date: {release_date || 'Unknown Release Date'}</Text>
                 <Text style={styles.overview}>Overview: {overview || 'No overview available.'}</Text>
+               
             </View>
         </ScrollView>
     );
@@ -40,16 +44,10 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#fff', // White color for the title
-        fontSize: 36, // Adjusted font size for better emphasis
+        fontSize: 30, // Adjusted font size for better emphasis
         fontWeight: 'bold',
         marginTop: 10, // Space above the title
         textAlign: 'center', // Centered title
-    },
-    releaseDate: {
-        fontSize: 18, // Font size for release date
-        color: '#e0e0e0', // Slightly lighter color for release date
-        marginTop: 10, // Space above the release date
-        textAlign: 'center', // Centered release date
     },
     overview: {
         fontSize: 18, // Adjusted font size for better readability
