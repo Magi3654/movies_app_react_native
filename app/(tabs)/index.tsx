@@ -57,6 +57,8 @@ export default function Index() {
             keyExtractor={(item) => item.id.toString()}
             numColumns={3}
             columnWrapperStyle={styles.columnWrapper}
+            nestedScrollEnabled={true}
+            //scrollEnabled={false}
             />
           </View>
         )}
@@ -82,9 +84,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   scrollViewContent: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex:1,
+    paddingHorizontal: 20,
   },
   logoContainer: {
     position: 'absolute',
@@ -109,6 +110,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     marginTop: 20,
+    
   },
   latestMoviesText: {
     color: 'white',
@@ -119,7 +121,12 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   columnWrapper: {
-    justifyContent: 'space-between', 
+    justifyContent: 'flex-start', 
+    gap:15,
+    paddingRight:5,
+    paddingBottom: 20,
+    marginVertical: 10,
+    
   },
   flatList: {
     marginTop: 8,
